@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+ 
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/actionbar_hight"
+        android:background="#848484"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/top_bg"
+            android:weightSum="7" >
+
+            <ImageView
+                android:id="@+id/home_menu_slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:src="@drawable/menu" />
+
+            <EditText
+                android:id="@+id/youtube_searchbox"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="4.9"
+              
+            
+             	
+                android:background="@drawable/left_search"
+                android:paddingLeft="5dp"
+                android:textColor="#ffffff"
+                android:singleLine="true" >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/youtube_search_button"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:focusable="true"
+                android:layout_weight="0.7"
+                android:background="@drawable/search_btn" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                 android:visibility="gone"
+                android:layout_weight="0.5"
+                android:src="@drawable/time" />
+
+            <ImageView
+                android:id="@+id/tag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+               
+                android:layout_weight="0.8"
+                android:src="@drawable/tag" />
+
+            <ImageView
+                android:id="@+id/youtube_download_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.8"
+                android:src="@drawable/download" />
+        </LinearLayout>
+    </LinearLayout>
+
+    
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_bg"
+        app:pstsShouldExpand="true" >
+    </com.astuetz.PagerSlidingTabStrip>
+    <!-- android:background="@drawable/background_tabs" -->
+
+	
+	<LinearLayout 
+	    
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    >
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        
+        android:layout_height="match_parent"
+        
+         /></LinearLayout>
+	
+	
+	     <include android:id="@+id/footer_include_layout" layout="@layout/footer"   />
+		 	
+   
+
+</LinearLayout>

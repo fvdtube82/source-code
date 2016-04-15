@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dip"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/com_iinmobi_adsdk_icon"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/com_iinmobi_adsdk_icon"
+            android:layout_marginRight="70dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+            <TextView
+                android:id="@+id/com_iinmobi_adsdk_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="xx"
+                android:textColor="#333333"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:textSize="14sp" 
+                android:drawablePadding="3dp"/>
+            </LinearLayout>
+            
+
+            <RelativeLayout
+                android:id="@+id/com_iinmobi_adsdk_download_show"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="6dp"
+                android:visibility="visible" >
+
+                <RatingBar
+                    android:id="@+id/com_iinmobi_adsdk_ratingBar"
+                    android:minHeight="10dp"
+                    android:progressDrawable="@drawable/com_iinmobi_adsdk_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="2dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:numStars="5"
+                    android:rating="1"
+                    android:maxHeight="10dp"
+                    android:maxWidth="10dp"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="18dp"
+                    android:layout_alignBottom="@id/com_iinmobi_adsdk_ratingBar"
+                    android:layout_toRightOf="@id/com_iinmobi_adsdk_ratingBar"
+                   android:layout_marginLeft="2dp"
+                    android:text="|"
+                     android:visibility="gone"
+                    android:textColor="#b3b3b3" />
+
+                <TextView
+                    android:id="@+id/com_iinmobi_adsdk_app_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@id/com_iinmobi_adsdk_ratingBar"
+                    android:gravity="fill"
+                    android:singleLine="true"
+                    android:text="12.22M"
+                    android:textColor="#666666"
+                    android:textSize="10sp" 
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/com_iinmobi_adsdk_app_details"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/com_iinmobi_adsdk_ratingBar"
+                    android:layout_below="@id/com_iinmobi_adsdk_ratingBar"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="12dp"
+                    android:includeFontPadding="false"
+                    android:text=""
+                    android:maxLines="3"
+                    android:lines="3"
+                    android:ellipsize="end"
+                    android:textColor="#808080"
+                    android:textSize="11.88sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/com_iinmobi_adsdk_downloading_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingTop="20dp" >
+
+                <ProgressBar
+                    android:id="@+id/com_iinmobi_adsdk_app_progressbar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="120dp"
+                    android:layout_height="3dp"
+                    android:indeterminateOnly="false"
+                    android:max="100" />
+
+                <TextView
+                    android:id="@+id/com_iinmobi_adsdk_app_percent_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/com_iinmobi_adsdk_app_progressbar"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/com_iinmobi_adsdk_download_rl"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/com_iinmobi_adsdk_download_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/com_iinmobi_adsdk_download" />
+
+
+            <TextView
+                android:id="@+id/com_iinmobi_adsdk_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/com_iinmobi_adsdk_download_button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="Download"
+                android:textColor="#949494"
+                android:textSize="10.56sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:text="_"
+        />
+
+</LinearLayout>

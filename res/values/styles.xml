@@ -1,0 +1,63 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+     <item name="android:windowActionBar">false</item>
+       <item name="android:windowNoTitle">true</item>
+    </style>
+
+    
+    
+    <style name="Theme.AppCompat.Light.NoActionBar" parent="@style/Theme.AppCompat">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+    
+    
+    
+</style>
+
+    <style name="header_font_style">	
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_marginLeft">10dp</item>
+         <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">normal</item>
+        
+    </style>
+    
+     <style name="download_tab_style">
+       <item name="android:textColor">#ffffff</item>
+         <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical|center_horizontal|center</item>
+        <item name="android:paddingTop">10dp</item>
+   </style>
+     
+     
+     <style name="downloded_list_font_style_header">
+         <item name="android:textSize">15dp</item>
+         <item name="android:typeface">sans</item>
+     </style>
+     <style name="downloded_list_font_style_footer">
+         <item name="android:textSize">12dp</item>
+         <item name="android:typeface">sans</item>
+     </style>
+     
+     <style name="downloded_list_font_style_white">
+         <item name="android:textSize">12dp</item>
+          <item name="android:textColor">#ffffff</item>
+         <item name="android:typeface">sans</item>
+     </style>
+</resources>

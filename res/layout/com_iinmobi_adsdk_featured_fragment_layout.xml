@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/adsdk_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:id="@+id/com_iinmobi_adsdk_head"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#f14638" >
+
+        <RelativeLayout
+            android:id="@+id/com_iinmobi_adsdk_pull"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:src="@drawable/com_iinmobi_adsdk_back" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/com_iinmobi_adsdk_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/com_iinmobi_adsdk_top" 
+            />
+
+        <TextView
+            android:id="@+id/com_iinmobi_adsdk_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:paddingTop="2dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="gone"
+             />
+        
+        <ImageView
+            android:id="@+id/com_iinmobi_adsdk_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@id/com_iinmobi_adsdk_title"
+            android:src="@drawable/com_iinmobi_adsdk_diamond" />
+    </RelativeLayout>
+    
+      <com.iinmobi.adsdk.view.OtherPullToRefreshLayout
+        android:id="@+id/com_iinmobi_adsdk_refreshable_view"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/com_iinmobi_adsdk_head"
+        android:layout_height="fill_parent"
+        >
+   		<include layout="@layout/com_iinmobi_adsdk_refresh_head" /> 
+        <ListView
+            android:id="@+id/com_iinmobi_adsdk_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+          
+            android:background="#e3e3e3"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:drawSelectorOnTop="false"
+            android:fadeScrollbars="true"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:headerDividersEnabled="false" />
+        </com.iinmobi.adsdk.view.OtherPullToRefreshLayout>
+</LinearLayout>

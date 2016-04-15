@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	 android:layout_height="fill_parent"
+	 android:background="#ffffff" 
+	>
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true" >
+
+            <ImageView
+                android:id="@+id/com_iinmobi_adsdk_pull_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/com_iinmobi_adsdk_arrow" />
+
+            <ImageView
+                android:id="@+id/com_iinmobi_adsdk_refreshing_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/com_iinmobi_adsdk_loading_small"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/com_iinmobi_adsdk_state_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pull down to refresh…"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/com_iinmobi_adsdk_state_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

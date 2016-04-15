@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/download_list_bg"
+  		
+        android:layout_height="80dp" >
+		
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:scaleType="fitXY"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/default_img" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_marginLeft="3dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/size"
+                android:layout_alignTop="@+id/thumbnail"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                  
+         			android:singleLine="true"
+                    style="@style/downloded_list_font_style_header"
+                    android:text="Title of Songs" />
+
+                <ProgressBar
+                   android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+               	
+                    android:progressDrawable="@drawable/download_progressbar" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ic_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/state" />
+
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/thumbnail"
+                android:textColor="#FF7E00"
+                 
+                 style="@style/downloded_list_font_style_footer"
+               android:gravity="center"
+               android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="wait..." />
+
+            <TextView
+               android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/percent"
+                android:layout_alignBottom="@+id/percent"
+                 style="@style/downloded_list_font_style_footer"
+                                     
+                         android:layout_marginTop="5dp"
+                 android:textColor="#FF7E00"
+                android:layout_toLeftOf="@+id/ic_state"
+             
+                android:text="TextView" />
+
+            <TextView
+                 android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/percent"
+           
+           		 style="@style/downloded_list_font_style_footer"	
+                android:layout_alignBottom="@+id/percent"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/percent"
+                android:text="TextView" />
+
+        </RelativeLayout>
+       
+    </LinearLayout> 
+
+</LinearLayout>

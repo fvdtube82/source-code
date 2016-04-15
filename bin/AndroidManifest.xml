@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.download.fvd.activity"
+    android:versionCode="6"
+    android:versionName="1.4.1" >
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+   
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ <!-- 添加快捷方式需要的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- gcm permission -->
+    <permission
+        android:name="com.download.fvd.activity.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.download.fvd.activity.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- gcm permission end -->
+    <uses-sdk android:minSdkVersion="11" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name="com.downoad.fdv.volley_resource.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/fvd_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+				
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.download.download2.DownloadListActivity"
+            android:configChanges="orientation|keyboardHidden|locale"
+            android:label="@string/download_manager"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.download.fvd.activity.MainActivity" />
+            <!--
+            <intent-filter>
+                <action android:name="@string/download_list_action"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".SearchPage"
+            android:label="@string/title_activity_search_page"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Play_Youtube_Video"
+            android:label="@string/title_activity_play__youtube__video"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+
+        <!-- gcm reciver -->
+        <receiver
+            android:name=".pushnotification.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.download.fvd.activity" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".pushnotification.GCMIntentService" />
+
+        <activity
+            android:name=".pushnotification.PushActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- end gcm recivr code -->
+
+
+        <!-- give service permission for killed apps tracking -->
+        <service
+            android:name="com.download.download2.DownloadOperator$PrimeService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+        <activity
+            android:name=".DownlodingList"
+            android:label="@string/title_activity_downloding_list"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <meta-data
+            android:name="DOWNLOAD_KEY"
+            android:value="PKFR7-38X18-5T3UV-0863V-6B3D7" >
+        </meta-data>
+
+        <activity
+            android:name="com.startapp.android.publish.list3d.List3DActivity"
+            android:theme="@android:style/Theme" />
+        <activity
+            android:name="com.startapp.android.publish.AppWallActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".Top_Apps"
+             android:screenOrientation="portrait"
+            android:label="@string/title_activity_top__apps" >
+        </activity>
+        
+        <service android:name="com.download.fvd.checkversion.VersionCheckService"></service>
+        
+        <!-- appia sdk -->
+        <activity
+            android:name="com.appia.sdk.DisplayAppWallActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <!-- end appia sdk -->
+        
+        
+        <!-- 9apps integration code -->
+         <activity android:name="com.iinmobi.adsdk.ui.AppListActivity" >
+        </activity>
+        <activity android:name="com.iinmobi.adsdk.ui.ShortcutActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iinmobi.adsdk.embedbrowser.EmbedBrowserActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <receiver android:name="com.iinmobi.adsdk.utils.NetworkStateReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- end 9app integration code -->
+    </application>
+
+</manifest>
